@@ -4,6 +4,12 @@ import { appInfo } from './appInfo'
 import Router from 'next/router'
 
 export let frontendConfig = () => {
+  const appInfo = {
+    appName: 'SuperTokens Demo App',
+    websiteDomain: window.location.origin,
+    apiDomain: window.location.origin,
+    apiBasePath: '/api/auth/',
+  }
   return {
     appInfo,
     recipeList: [
