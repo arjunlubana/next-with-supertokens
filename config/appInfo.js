@@ -5,8 +5,15 @@ const apiBasePath = '/api/auth/'
 const websiteDomain =
   process.env.APP_URL ||
   process.env.NEXT_PUBLIC_APP_URL ||
-  process.env.VERCEL_URL ||
-  `http://localhost:${port}`
+  process.env.VERCEL_URL
+
+if (process.env.NODE_ENV !== "production") {
+  const websiteDomain =
+    process.env.APP_URL ||
+    process.env.NEXT_PUBLIC_APP_URL ||
+    process.env.VERCEL_URL ||
+    `http://localhost:${port}`
+}
 
 const appInfo = {
   appName: 'SuperTokens Demo App',
