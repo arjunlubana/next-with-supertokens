@@ -1,15 +1,17 @@
-const port = process.env.APP_PORT || 3000
-
+let websiteDomain;
 const apiBasePath = '/api/auth/'
 
-export const websiteDomain =
-  process.env.APP_URL ||
-  process.env.NEXT_PUBLIC_APP_URL ||
-  `http://localhost:${port}`
+if (process.env.NODE_ENV == "production") {
+  websiteDomain = process.env.VERCEL_URL
+} else {
+  websiteDomain = "http://localhost:3000"
+}
 
-export const appInfo = {
+const appInfo = {
   appName: 'SuperTokens Demo App',
   websiteDomain,
   apiDomain: websiteDomain,
   apiBasePath,
 }
+
+export { websiteDomain, appInfo }
