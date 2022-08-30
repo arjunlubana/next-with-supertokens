@@ -7,6 +7,7 @@ let websiteDomain =
   process.env.NEXT_PUBLIC_APP_URL ||
   process.env.VERCEL_URL
 
+console.log(websiteDomain)
 if (process.env.NODE_ENV !== "production") {
   websiteDomain =
     process.env.APP_URL ||
